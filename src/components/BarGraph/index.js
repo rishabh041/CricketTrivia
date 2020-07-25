@@ -28,7 +28,6 @@ class BarGraph extends PureComponent {
     }
 
     render() {
-        console.log("barGraph render");
         const data = [
             { text: 'Correct', value: this.props.correctAns },
             { text: 'Incorrect', value: this.props.wrongAns }
