@@ -32,8 +32,6 @@ class App extends PureComponent {
       else if (userAns === this.questionData[i].correct)
         correctAns++;
     }
-    console.log("flag=", flag);
-    console.log("correctAns=", correctAns);
     if (flag) {
       this.setState({
         correctAns,
@@ -43,7 +41,6 @@ class App extends PureComponent {
     else {
       this.setState({ submitFlag: true })
     }
-    console.log(this.state.userAnswers);
   }
   setAnswer = (e, qIndex) => {
     let ansArr = { ...this.state.userAnswers };
@@ -63,7 +60,6 @@ class App extends PureComponent {
         <div className="bodyContainer">
           <div className="quizContainer">
             {this.questionData.map(({ question, answers, id }) => {
-              console.log(this.state.userAnswers[id]);
               return (
                 <QuestionComp
                   key={`question_${id}`}
