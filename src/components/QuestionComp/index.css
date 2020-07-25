@@ -1,0 +1,27 @@
+.errorQuestionBox {
+  border: 1px solid red;
+  margin: 16px 8px 0px 16px;
+}
+.questionBox {
+  border: 1px solid #ebebeb;
+  margin: 16px 8px 0px 16px;
+}
+.questionWrapper {
+  padding: 6px;
+  background: #444;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.answersWrapper {
+  text-align: left;
+  padding: 12px 0px 16px 16px;
+  background: #f5f8fa;
+}
+.answersWrapper > select {
+  border-radius: 4px;
+  background: #fff;
+  width: 40%;
+  border: 2px solid #ebebeb;
+  padding: 4px;
+}
