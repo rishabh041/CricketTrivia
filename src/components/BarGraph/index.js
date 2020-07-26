@@ -23,6 +23,9 @@ class BarGraph extends PureComponent {
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
     }
+    componentDidUpdate() {
+        window.scrollTo(0, this.graphRef.offsetTop)
+    }
     handleResize = () => {
         this.setState({ width: this.graphRef.offsetWidth });
     }

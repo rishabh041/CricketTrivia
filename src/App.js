@@ -8,11 +8,14 @@ class App extends PureComponent {
   state = {
     showGraphFlag: false,
     userAnswers: {},
-    submitFlag: false
+    submitFlag: false,
+    mediaWidth: window.innerWidth
   };
   questionData = questionData;
   totLength = questionData.length;
-
+  componentDidMount() {
+    window.addEventListener('resize', () => this.setState({ mediaWidth: window.innerWidth }));
+  }
   resetHandler = () => {
     this.setState({
       submitFlag: false,
@@ -39,7 +42,7 @@ class App extends PureComponent {
       })
     }
     else {
-      this.setState({ submitFlag: true })
+      this.setState({ showGraphFlag: false, submitFlag: true })
     }
   }
   setAnswer = (e, qIndex) => {
@@ -57,7 +60,7 @@ class App extends PureComponent {
     return (
       <div className="container">
         <h2 className="title">Cricket Trivia</h2>
-        <div className="bodyContainer">
+        <div className={this.state.mediaWidth >= 768 ? "bodyContainer" : "bodyContainer1"}>
           <div className="quizContainer">
             {this.questionData.map(({ question, answers, id }) => {
               return (
